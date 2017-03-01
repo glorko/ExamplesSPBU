@@ -1,5 +1,7 @@
 package net.punklan.glorfindeil.study.lesson2;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * Created by Aleksandr_Kichev on 28-Feb-17.
  */
@@ -8,7 +10,18 @@ public class StringExamples {
         //Initialization with literal
         String str1 = "Hello World";
         System.out.println("str1:" + str1);
-
+        //Equals
+        String s1 = "Java";
+        String s2 = "Java";
+        String s3 = new String("Java");
+        System.out.println(s1 + "==" + s2 +
+                " : " + (s1 == s2)); // true
+        System.out.println(s1 + "==" + s3 +
+                " : " + (s1 == s3)); // false
+        System.out.println(s1 + " equals " + s2 + " : "
+                + s1.equals(s2)); // true
+        System.out.println(s1 + " equals " + s3 + " : "
+                + s1.equals(s3)); // true
         //Initialization with char array
         char arr[] = {'H', 'e', 'l', 'l', 'o'};
         String str2 = new String(arr);
@@ -97,11 +110,11 @@ public class StringExamples {
         System.out.println("Compare:" + str5.compareTo("abc"));
 
         //comparison attempts
-        String s1 = "abc";
-        String s3 = new String("abc");
+        String st1 = "abc";
+        String st3 = new String("abc");
 
-        System.out.println(s1 == s3);
-        System.out.println(s1.equalsIgnoreCase(s3));
+        System.out.println(st1 == st3);
+        System.out.println(st1.equalsIgnoreCase(st3));
 
         long time = System.currentTimeMillis();
         String concatSlow = "";
@@ -118,5 +131,15 @@ public class StringExamples {
         }
         System.out.println("builder.toString() = " + builder.toString());
         System.out.println("Fast concat for " + (System.currentTimeMillis() - time));
+
+        try {
+            String cp1251InUtf = new String("РџСЂРёРІРµС‚ РјРёСЂ");
+            byte[] bytes = cp1251InUtf.getBytes("CP1251");
+
+            String encoded = new String(bytes, "UTF8");
+            System.out.println(encoded);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 }
