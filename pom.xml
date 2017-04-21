@@ -6,7 +6,11 @@
 
     <groupId>net.punklan.glorfindeil.study</groupId>
     <artifactId>ExamplesSPBU</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>RestClient</module>
+    </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>

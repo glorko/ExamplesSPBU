@@ -29,7 +29,7 @@ public class DateExample {
         DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         Date parsedDate = format.parse("20.02.1984");
         System.out.println("Parsed date from date format" + parsedDate);
-        System.out.println("Printed today in date format" + format.format(now));
+        System.out.println("Printed today in date format " + format.format(now));
         //бегаем по датам
         anotherNow.add(Calendar.DAY_OF_MONTH, 12);
         anotherNow.add(Calendar.MINUTE, 30);

@@ -70,7 +70,7 @@ public class Find {
 
 
 
-        Path startingDir = Paths.get("c:","windows");
+        Path startingDir = Paths.get("c:","Users\\st020794\\IdeaProjects\\ExamplesSPBU");
         String pattern = "*.ini";
 
         Finder finder = new Finder(pattern);
