@@ -24,8 +24,8 @@ public class RestServiceSimpleClient {
         c1.setFirstName("Ivan");
         c1.setLastName("Jackson");
         Customer c2 = new Customer();
-        c2.setFirstName("Adolf");
-        c2.setLastName("Navalny");
+        c2.setFirstName("James");
+        c2.setLastName("Coward");
         restTemplate.postForEntity(url, c1, Customer.class);
         restTemplate.postForEntity(url, c2, Customer.class);
 
