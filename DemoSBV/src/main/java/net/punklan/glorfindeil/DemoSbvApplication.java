@@ -3,12 +3,15 @@ package net.punklan.glorfindeil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.web.client.RestTemplate;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,5 +69,10 @@ public class DemoSbvApplication implements CommandLineRunner {
         boards.stream().map(Board::toString).forEach(System.out::println);
 
 
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
