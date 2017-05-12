@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -23,9 +24,11 @@ public class RestServiceSimpleClient {
         Customer c1 = new Customer();
         c1.setFirstName("Ivan");
         c1.setLastName("Jackson");
+        c1.setDate(LocalDate.now());
         Customer c2 = new Customer();
         c2.setFirstName("James");
         c2.setLastName("Coward");
+        c2.setDate(LocalDate.now());
         restTemplate.postForEntity(url, c1, Customer.class);
         restTemplate.postForEntity(url, c2, Customer.class);
 

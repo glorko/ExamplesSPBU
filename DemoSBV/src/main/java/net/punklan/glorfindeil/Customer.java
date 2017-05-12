@@ -1,5 +1,9 @@
 package net.punklan.glorfindeil;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDate;
+
 /**
  * Created by st020794 on 14.04.2017.
  */
@@ -33,12 +37,24 @@ public class Customer {
     private String firstName;
     private String lastName;
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate date;
+
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", date=" + date +
                 '}';
     }
 }
+
